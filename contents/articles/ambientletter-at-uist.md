@@ -4,7 +4,7 @@ date: "2018-10-30"
 tags:
   - "pub"
   - "post"
-image_preview: "/assets/project_2018-10-30/preview.png"
+image_preview: "/assets/articles/project_2018-10-30/preview.png"
 summary: "H.265/HEVCにおけるイントラ予測モード決定に深層学習を用いた手法の検討を行いました"
 descriptions:
   texts:
@@ -14,7 +14,7 @@ descriptions:
       text: "2018-10-16"
   links:
     - name: "PDF"
-      url: "./assets/project_2018-10-30/proceedings.pdf"
+      url: "/assets/articles/project_2018-10-30/proceedings.pdf"
     - name: "VIDEO"
       url: "https://www.youtube.com/watch?v=G2ILBbgnWfs"
     - name: "ACM"
@@ -25,7 +25,6 @@ descriptions:
 ベルリンで開催されたUser Interface Software and Technology(UIST) 2018にてポスター発表しました．  
 発表内容は国内の学会であるWISSに発表済の [ambientletter](/project/ambientletter) ですが，論文の内容は少し変更してあります．
 
-　  
 # Title
 AmbientLetter: Letter Presentation Method for Discreet Notification of Unknown Spelling when Handwriting
 

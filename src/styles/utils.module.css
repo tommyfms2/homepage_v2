@@ -54,3 +54,7 @@
 .myList div{
     white-space: nowrap;
 }
+
+.inDescLink {
+    padding: 0 10;
+}
