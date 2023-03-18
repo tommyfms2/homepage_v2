@@ -20,10 +20,12 @@ jobs:
     - run: npm run build
     - name: Test
       run: npm test
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Set up envs
       env:
         NEXT_PUBLIC_BASE_PATH: /homepage_v2
+      run: echo "NEXT_PUBLIC_BASE_PATH=${NEXT_PUBLIC_BASE_PATH}" >> $GITHUB_ENV
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
