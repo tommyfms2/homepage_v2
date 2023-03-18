@@ -22,6 +22,8 @@ jobs:
       run: npm test
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
+      env:
+        NEXT_PUBLIC_BASE_PATH: /homepage_v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
