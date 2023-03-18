@@ -8,7 +8,7 @@ interface Props {
 
 export default function ArticlePrevewCard({ articlePreview }: Props) {
     return (
-        <Link key={articlePreview.id} href={`/post/${articlePreview.id}`}>
+        <Link key={articlePreview.id} href={`./post/${articlePreview.id}`}>
             <Col key={articlePreview.id}>
             <Card hoverable style={{ width: 300 }} cover={<img alt={articlePreview.title} src={articlePreview.image_preview} />}>
                 <Card.Meta title={articlePreview.title} description={articlePreview.summary}/>

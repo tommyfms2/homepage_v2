@@ -4,7 +4,7 @@ title: "AmbientLetter"
 tags:
   - "deep-learning"
   - "pub"
-image_preview: "/assets/articles/project_2017-12-29/DSC08717-shumbnail.JPG"
+image_preview: "./assets/articles/project_2017-12-29/DSC08717-shumbnail.JPG"
 summary: "わからないスペルをこっそり知るための文字認識及び文字提示手法"
 descriptions:
   texts:
@@ -14,7 +14,7 @@ descriptions:
       text: "2017-12-06"
   links:
     - name: "PDF"
-      url: "/assets/project_2017-12-29/2017-10-18-AmbientLetter-demo1.pdf"
+      url: "./assets/project_2017-12-29/2017-10-18-AmbientLetter-demo1.pdf"
 
 ---
 
