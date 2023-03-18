@@ -12,6 +12,7 @@ export const siteTitle = "Homepage";
 const { Text } = Typography
 
 export default function Layout({ children, home }: {children: any, home: boolean}) {
+    const basePath = process.env.assetPrefix || '';
     return (
         <div className={styles.container}>
             <Head>
@@ -21,7 +22,7 @@ export default function Layout({ children, home }: {children: any, home: boolean
                 {home ? (
                     <>
                         <Space size={25} direction="vertical" align="center">
-                            <Avatar size={192} src="/images/global/profile.jpg" />
+                            <Avatar size={192} src={basePath+"/images/global/profile.jpg"} />
                             <Space direction="vertical" size={0} align='center'>
                                 <Text className={utilStyles.headingXl}>{name}</Text>
                                 <Text className={utilStyles.headingMd} type="secondary">softwear engineer</Text>

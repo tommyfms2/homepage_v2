@@ -7,10 +7,11 @@ interface Props {
 }
 
 export default function ArticlePrevewCard({ articlePreview }: Props) {
+    const basePath = process.env.assetPrefix || '';
     return (
         <Link key={articlePreview.id} href={`/post/${articlePreview.id}`}>
             <Col key={articlePreview.id}>
-            <Card hoverable style={{ width: 300 }} cover={<img alt={articlePreview.title} src={articlePreview.image_preview} />}>
+            <Card hoverable style={{ width: 300 }} cover={<img alt={articlePreview.title} src={basePath+articlePreview.image_preview} />}>
                 <Card.Meta title={articlePreview.title} description={articlePreview.summary}/>
             </Card>
             </Col>
