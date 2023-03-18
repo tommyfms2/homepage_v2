@@ -1,20 +1,16 @@
+import { ArticlePreview } from '@/components/article-preview/types';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from "path";
+import { remark } from 'remark';
+import html from 'remark-html';
+import remarkParse from 'remark-parse';
 
 const articlesDirectory = path.join(process.cwd(), 'contents/articles');
 
-interface PreviewData {
-    id: string;
-    title: string;
-    date: string;
-    image_preview: string;
-    summary: string;
-}
-
-export function getArticlePreviewsSorted(): PreviewData[] {
+export function getArticlePreviewsSorted(): ArticlePreview[] {
     const fileNames = fs.readdirSync(articlesDirectory);
-    const allArticlesData: PreviewData[] = fileNames.map((fileName) => {
+    const allArticlesData: ArticlePreview[] = fileNames.map((fileName) => {
         const id = fileName.replace(/\.md$/, '');
         const fullPath = path.join(articlesDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -27,12 +23,50 @@ export function getArticlePreviewsSorted(): PreviewData[] {
             summary: matterResult.data.summary
         };
     });
-    
-    return allArticlesData.sort((a: PreviewData, b: PreviewData) => {
-        if (a.date < b.date) {
-            return 1;
-        } else {
-            return -1;
-        }
+
+    return allArticlesData.sort((a: ArticlePreview, b: ArticlePreview) => {
+        return b.date.localeCompare(a.date);
     });
+}
+
+export function getAllArticleIds() {
+    const fileNames = fs.readdirSync(articlesDirectory);
+    return fileNames.map((filename) => {
+        return {
+            params: {
+                id: filename.replace(/\.md$/, ''),
+            },
+        };
+    });
+}
+
+export async function getArticleData(id: string) {
+    const fullPath = path.join(articlesDirectory, `${id}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    const ast = remark()
+        .use(remarkParse)
+        .parse(matterResult.content);
+
+    let headings: any = [];
+    ast.children.forEach((node) => {
+        if (node.type === "heading") {
+            const depth = node.depth;
+            const title = (node.children[0] as any).value;
+            headings.push({"depth": depth, "heading": title});
+        }
+    })
+
+    return {
+        id,
+        ast,
+        headings,
+        contentHtml,
+        ...matterResult.data,
+    };
 }

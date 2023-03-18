@@ -1,15 +1,15 @@
 import { GithubOutlined, TagFilled, TwitterOutlined } from "@ant-design/icons";
 import { FaGraduationCap, FaTag } from "react-icons/fa";
 import { Avatar, Col, Row, Space, Typography } from "antd";
-import Title from "antd/es/typography/Title";
 import Head from "next/head";
+import Link from "next/link";
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/layout.module.css'
 
 const name = "Xaver Tomihiro Toyozaki";
 export const siteTitle = "Homepage";
 
-const { Text, Link } = Typography
+const { Text } = Typography
 
 export default function Layout({ children, home }: {children: any, home: boolean}) {
     return (
@@ -21,7 +21,7 @@ export default function Layout({ children, home }: {children: any, home: boolean
                 {home ? (
                     <>
                         <Space size={25} direction="vertical" align="center">
-                            <Avatar size={192} src="./images/global/profile.jpg" />
+                            <Avatar size={192} src={"/images/global/profile.jpg"} />
                             <Space direction="vertical" size={0} align='center'>
                                 <Text className={utilStyles.headingXl}>{name}</Text>
                                 <Text className={utilStyles.headingMd} type="secondary">softwear engineer</Text>
@@ -60,7 +60,9 @@ export default function Layout({ children, home }: {children: any, home: boolean
                     </>
                 ) : (
                     <>
-                        <Avatar size={128} src="./images/global/profile.jpg" />
+                        <Space size={25} direction="vertical" align="center">
+                            <Link href="/"><Avatar size={128} src="/images/global/profile.jpg" /></Link>
+                        </Space>
                     </>
                 )}
             </header>
