@@ -4,7 +4,7 @@ title: "戦闘機"
 tags:
   - "picture"
 summary: "お絵かき"
-image_preview: "./assets/articles/project_2018-12-31-airplane/thumbnail.png"
+image_preview: "/assets/articles/project_2018-12-31-airplane/thumbnail.png"
 
 ---
 

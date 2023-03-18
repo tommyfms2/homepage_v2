@@ -4,7 +4,7 @@ title: "H.265/HEVC + Deep Learning"
 tags:
   - "deep-learning"
   - "pub"
-image_preview: "./assets/articles/project_2017-04-09/network-shumbnail.png"
+image_preview: "/assets/articles/project_2017-04-09/network-shumbnail.png"
 summary: "ambientletterをUIST 2018でポスター発表しました"
 descriptions:
   texts:

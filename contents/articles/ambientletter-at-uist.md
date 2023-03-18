@@ -4,7 +4,7 @@ date: "2018-10-30"
 tags:
   - "pub"
   - "post"
-image_preview: "./assets/articles/project_2018-10-30/preview.png"
+image_preview: "/assets/articles/project_2018-10-30/preview.png"
 summary: "H.265/HEVCにおけるイントラ予測モード決定に深層学習を用いた手法の検討を行いました"
 descriptions:
   texts:
