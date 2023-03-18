@@ -1,0 +1,1 @@
+export const BASE_PATH = '/homepage_v2';
