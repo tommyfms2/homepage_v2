@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ develop ]
     
+env:
+  NODE_ENV: pr
+    
 jobs:
   build:
     runs-on: ubuntu-latest
