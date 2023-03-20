@@ -17,6 +17,10 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
+    - name: Set up envs
+      env:
+        NEXT_PUBLIC_BASE_PATH: /homepage_v2
+      run: echo "NEXT_PUBLIC_BASE_PATH=${NEXT_PUBLIC_BASE_PATH}" >> $GITHUB_ENV
     - run: npm run build
     - name: Test
       run: npm test
