@@ -19,5 +19,5 @@ $ npx serve out
 ```
 
 ### マージ時確認
-prを作成すると｀.github/workflows/main.yml｀でビルドし、テスト環境(http://www.toyozaki.me/homepage_v2)にデプロイされる  
+prを作成すると`.github/workflows/main.yml`でビルドし、[テスト環境](http://www.toyozaki.me/homepage_v2) にデプロイされる  
 デプロイ完了後、サイトを見て問題ないことを確認してからマージする
