@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const nextConfig = {
   reactStrictMode: true,
-  // assetPrefix: process.env.NODE_ENV === 'pr' ? './' : '',
+  basePath: basePath,
+  assetPrefix: `${basePath}/`
 }
 
 module.exports = nextConfig

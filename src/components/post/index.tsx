@@ -11,7 +11,6 @@ interface Props {
 export default function Post( { postData } : Props ) {
     let sideBarSize = 7;
     let offset = 2;
-    console.log(postData.descriptions);
     if (postData.descriptions === undefined) {
         sideBarSize = 0;
         offset = 0;
