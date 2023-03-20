@@ -47,7 +47,23 @@ export async function getArticleData(id: string) {
     const processedContent = await remark()
         .use(html)
         .process(matterResult.content);
-    const contentHtml = processedContent.toString();
+    // const contentHtml = processedContent.toString();
+    // console.log(contentHtml);
+    // let contentHtmlWithBasePath = contentHtml;
+    // if (process.env.NEXT_PUBLIC_BASE_PATH!==undefined) {
+    //     contentHtmlWithBasePath = contentHtml.replace(
+    //         /\/assets\//g,
+    //         process.env.NEXT_PUBLIC_BASE_PATH + "/assets/"
+    //     );
+    // }
+    // console.log('----');
+    // console.log(contentHtmlWithBasePath)
+    const contentHtml = process.env.NEXT_PUBLIC_BASE_PATH===undefined ? processedContent.toString() :
+        processedContent.toString().replace(
+            /\/assets\//g,
+            process.env.NEXT_PUBLIC_BASE_PATH + "/assets/"
+        );
+    console.log(contentHtml);
 
     const ast = remark()
         .use(remarkParse)
