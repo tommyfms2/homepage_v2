@@ -52,7 +52,6 @@ export async function getArticleData(id: string) {
             /\/assets\//g,
             process.env.NEXT_PUBLIC_BASE_PATH + "/assets/"
         );
-    console.log(contentHtml);
 
     const ast = remark()
         .use(remarkParse)
