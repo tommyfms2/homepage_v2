@@ -4,6 +4,10 @@
     margin: 3rem auto 6rem;
 }
 
+.container img {
+    max-width: 100%;
+}
+
 .header {
     display: flex;
     flex-direction: column;
